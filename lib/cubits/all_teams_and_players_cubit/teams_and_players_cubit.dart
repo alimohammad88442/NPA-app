@@ -45,7 +45,7 @@ class TeamsAndPlayersCubit extends Cubit<TeamsAndPlayersState> {
     }
   }
 
-  void searchforPlayer(int id) async {
+  void searchforPlayer(String id) async {
     emit(LoadingState());
     try {
       searchPlayerModel = await searchForPlayerService.searchForPlayer(id);
@@ -55,7 +55,7 @@ class TeamsAndPlayersCubit extends Cubit<TeamsAndPlayersState> {
     }
   }
 
-  void searchforTeam(int id) async {
+  void searchforTeam(String id) async {
     emit(LoadingState());
     try {
       searchTeamModel = await searchForTeamService.searchFroTeam(id);

@@ -7,7 +7,7 @@ import 'package:nba_app/models/all_teams_model.dart';
 
 class OneTeamPage extends StatelessWidget {
   const OneTeamPage({super.key});
-
+  static String id = 'oneteampage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -18,7 +18,8 @@ class OneTeamPage extends StatelessWidget {
           icon: const Icon(Icons.arrow_back),
         ),
       ),
-      body: BlocBuilder<TeamsAndPlayersCubit,TeamsAndPlayersState>(builder: (context, state) {
+      body: BlocBuilder<TeamsAndPlayersCubit, TeamsAndPlayersState>(
+        builder: (context, state) {
           if (state is LoadingState) {
             return const Center(
               child: CircularProgressIndicator(
@@ -37,13 +38,23 @@ class OneTeamPage extends StatelessWidget {
                 child: Text(e.toString()),
               );
             }
-          } else {
-            return const Center(
-                child: CircularProgressIndicator(
-              color: Colors.blue,
+          } else if (state is FailureState) {
+            return Center(
+                child: Column(
+              children: [
+                const CircularProgressIndicator(
+                  color: Colors.blue,
+                ),
+                Text(state.erreMeassage),
+              ],
             ));
+          } else {
+            return const CircularProgressIndicator(
+              color: Colors.green,
+            );
           }
-      },),
+        },
+      ),
     );
   }
 }

@@ -7,7 +7,7 @@ import 'package:nba_app/models/all_players_model.dart';
 
 class OnePlayerPage extends StatelessWidget {
   const OnePlayerPage({super.key});
-
+static String id = 'oneplayerpage';
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -37,11 +37,20 @@ class OnePlayerPage extends StatelessWidget {
                 child: Text(e.toString()),
               );
             }
-          } else {
-            return const Center(
-                child: CircularProgressIndicator(
-              color: Colors.blue,
+          } else if (state is FailureState) {
+            return Center(
+                child: Column(
+              children: [
+                const CircularProgressIndicator(
+                  color: Colors.blue,
+                ),
+                Text(state.erreMeassage),
+              ],
             ));
+          } else {
+            return const CircularProgressIndicator(
+              color: Colors.green,
+            );
           }
       },),
     );

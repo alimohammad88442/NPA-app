@@ -4,6 +4,8 @@ import 'package:nba_app/cubits/all_teams_and_players_cubit/teams_and_players_cub
 import 'package:nba_app/pages/home_page.dart';
 import 'package:nba_app/pages/all_players_page.dart';
 import 'package:nba_app/pages/all_teams_page.dart';
+import 'package:nba_app/pages/one_player_page.dart';
+import 'package:nba_app/pages/one_team_page.dart';
 import 'package:nba_app/services/players_service.dart';
 import 'package:nba_app/services/search_for_player_service.dart';
 import 'package:nba_app/services/search_for_team_service.dart';
@@ -32,6 +34,8 @@ class MyApp extends StatelessWidget {
           HomePage.id: (context) => const HomePage(),
           TeamsPage.id: (context) => const TeamsPage(),
           PlayersPage.id: (context) => const PlayersPage(),
+          OneTeamPage.id:(context) => const OneTeamPage(),
+          OnePlayerPage.id:(context) => const OnePlayerPage(),
         },
         initialRoute: HomePage.id,
       ),

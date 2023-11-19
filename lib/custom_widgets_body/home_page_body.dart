@@ -6,6 +6,8 @@ import 'package:nba_app/custom_widgets/select_category_button.dart';
 import 'package:nba_app/custom_widgets/text_form_field_widget.dart';
 import 'package:nba_app/pages/all_players_page.dart';
 import 'package:nba_app/pages/all_teams_page.dart';
+import 'package:nba_app/pages/one_player_page.dart';
+import 'package:nba_app/pages/one_team_page.dart';
 
 class HomepageBody extends StatefulWidget {
   const HomepageBody({super.key});
@@ -40,7 +42,11 @@ class _HomepageBodyState extends State<HomepageBody> {
               text: 'search for a team',
               sicon: IconButton(
                   onPressed: () {
-                    if (formkay.currentState!.validate()) {}
+                    if (formkay.currentState!.validate()) {
+                      BlocProvider.of<TeamsAndPlayersCubit>(context)
+                          .searchforTeam(teamSearch!);
+                      Navigator.pushNamed(context, OneTeamPage.id);
+                    }
                   },
                   icon: const Icon(Icons.search)),
             ),
@@ -57,7 +63,11 @@ class _HomepageBodyState extends State<HomepageBody> {
               onChanged: (value) => playerSearch = value,
               sicon: IconButton(
                   onPressed: () {
-                    if (formkay.currentState!.validate()) {}
+                    if (formkay.currentState!.validate()) {
+                       BlocProvider.of<TeamsAndPlayersCubit>(context)
+                          .searchforPlayer(playerSearch!);
+                      Navigator.pushNamed(context, OnePlayerPage.id);
+                    }
                   },
                   icon: const Icon(Icons.search)),
             ),

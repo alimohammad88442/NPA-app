@@ -13,13 +13,13 @@ class PlayerListViewWidget extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 10),
       child: Container(
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(16), color: Colors.greenAccent),
+            borderRadius: BorderRadius.circular(16), color: Colors.blueGrey),
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(playersModel.firstName),
+              Text('name : ${playersModel.firstName}'),
               Row(
                 children: [
                   const Text('info'),
