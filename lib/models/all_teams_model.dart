@@ -27,4 +27,7 @@ class TeamsModel {
       division: jsonData['division'],
     );
   }
+  
 }
+
+

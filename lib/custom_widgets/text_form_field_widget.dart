@@ -9,14 +9,7 @@ class AppTextField extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 15),
-      child: TextFormField(
-        validator: (data) {
-          if (data!.isEmpty) {
-            return 'this field required';
-          }
-          return null;
-        },
-        
+      child: TextField(
         onChanged: onChanged,
         decoration: InputDecoration(
             hintText: text,
@@ -24,7 +17,7 @@ class AppTextField extends StatelessWidget {
             suffixIcon: sicon,
             enabledBorder: const OutlineInputBorder(
                 borderSide: BorderSide(color: Colors.white)),
-            border: OutlineInputBorder(borderRadius: BorderRadius.circular(20))),
+            border: OutlineInputBorder(borderRadius: BorderRadius.circular(8))),
       ),
     );
   }
