@@ -12,7 +12,7 @@ static String id = 'oneplayerpage';
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: CustomAppBar(
-        appBartext: 'player name',
+        appBartext: 'player',
         leading: IconButton(
           onPressed: () => Navigator.pop(context),
           icon: const Icon(Icons.arrow_back),

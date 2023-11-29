@@ -20,6 +20,7 @@ class PlayerListViewWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('name : ${playersModel.firstName}'),
+              const Divider(color: Colors.black,),
               Row(
                 children: [
                   const Text('info'),

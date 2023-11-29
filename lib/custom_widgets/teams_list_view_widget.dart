@@ -19,18 +19,19 @@ class TeamsListViewWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
             children: [
             
-              Text(teamModel.name),
+              Text('name: ${teamModel.name}'),
+             const Divider(color: Colors.black,),
             Row(
               children: [
                const Text('info'),
                const SizedBox(width: 50),
                 Column(
                   children: [
-                     Text(teamModel.fullName),
-                      Text(teamModel.city),
-                      Text(teamModel.abbreviation),
-                      Text(teamModel.conference),
-                      Text(teamModel.division),
+                     Text('full name : ${teamModel.fullName}'),
+                      Text('city:${teamModel.city}'),
+                      Text('abbreviation ${teamModel.abbreviation}'),
+                      Text('conference :${teamModel.conference}'),
+                      Text('division ${teamModel.division}'),
                   ],
                 )
               ],
