@@ -40,8 +40,8 @@ class _HomepageBodyState extends State<HomepageBody> {
             text: 'search for a team',
             sicon: IconButton(
                 onPressed: () {
-                  BlocProvider.of<TeamsAndPlayersCubit>(context)
-                      .searchforTeam(searchUsingNames(teamSearch!.toLowerCase()).toString());
+                  BlocProvider.of<TeamsAndPlayersCubit>(context).searchforTeam(
+                      searchUsingNames(teamSearch!.toLowerCase()).toString());
                   Navigator.pushNamed(context, OneTeamPage.id);
                 },
                 icon: const Icon(Icons.search)),
